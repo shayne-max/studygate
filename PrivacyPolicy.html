@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — StudyGate</title>
+<title>Privacy Policy — StudyGate AI</title>
 <style>
   :root { --ink:#1A1C1B; --ink2:#414845; --ink3:#6E746F; --line:#E2E3E0; --bg:#F9F9F7; --green:#173F35; --green2:#C1ECDD; }
   * { box-sizing: border-box; }
@@ -12,9 +12,8 @@
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
     font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
   }
-  .wrap { max-width:720px; margin:0 auto; padding:56px 24px 96px; }
+  .wrap { max-width:760px; margin:0 auto; padding:56px 24px 96px; }
   header { border-bottom:1px solid var(--line); padding-bottom:32px; margin-bottom:40px; }
-  .eyebrow { font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--ink3); margin:0 0 14px; }
   h1 { font-family:"New York",Georgia,"Times New Roman",serif; font-size:34px; font-weight:600; line-height:1.2; margin:0 0 16px; letter-spacing:-.01em; }
   .meta { font-family:"SF Mono",ui-monospace,Menlo,monospace; font-size:12px; color:var(--ink2); margin:0; }
   .badge { display:inline-block; background:var(--green2); color:#002019; font-size:11px; font-weight:600;
@@ -29,15 +28,22 @@
   a { color:var(--green); text-decoration:underline; text-underline-offset:2px; }
   .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px 24px; margin:20px 0; }
   .card h3 { margin-top:0; }
+  .card.warn { background:#FFDAD6; border-color:#BA1A1A; }
+  .card.warn h3 { color:#93000A; }
   .tag { display:inline-block; font-family:"SF Mono",ui-monospace,Menlo,monospace; font-size:10px; font-weight:600;
          letter-spacing:.06em; padding:3px 7px; border-radius:4px; margin-right:6px; }
-  .t-collect { background:#FFDDB9; color:#663E00; }
+  .t-caution { background:#FFDDB9; color:#663E00; }
   .t-shared  { background:#FFDAD6; color:#93000A; }
   .t-opt     { background:#DEE4DE; color:#606661; }
+  .toc { list-style:none; padding:0; counter-reset:t; }
+  .toc li { counter-increment:t; padding-left:34px; position:relative; margin-bottom:8px; }
+  .toc li::before { content:counter(t); position:absolute; left:0; top:1px; font-family:"SF Mono",monospace;
+                    font-size:11px; color:var(--ink3); background:#fff; border:1px solid var(--line);
+                    border-radius:4px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; }
   table { width:100%; border-collapse:collapse; margin:20px 0; font-size:15px; }
   th,td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
   th { font-size:11px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:var(--ink3); }
-  td:first-child { font-weight:600; color:var(--ink); width:34%; }
+  td:first-child { font-weight:600; color:var(--ink); }
   footer { margin-top:64px; padding-top:28px; border-top:1px solid var(--line); }
   footer p { font-size:13px; color:var(--ink3); }
   .mono { font-family:"SF Mono",ui-monospace,Menlo,monospace; font-size:13px; }
@@ -47,107 +53,156 @@
 <div class="wrap">
 
 <header>
-  <div class="badge">App Store Required Disclosure</div>
   <h1>Privacy Policy</h1>
-  <p class="meta">StudyGate · Last updated: October 7, 2026</p>
+  <p class="meta">StudyGate AI · Last updated: October 7, 2026</p>
 </header>
 
-<p class="lead">StudyGate helps you turn study material into structured study guides, quizzes, and flashcards. This policy explains what we handle when you use the app, and what we deliberately leave alone.</p>
+<p class="lead">StudyGate AI turns study material you provide into structured study guides, quizzes, and flashcards. This policy explains what we handle, who we share it with, and what we deliberately leave alone.</p>
 
-<h2>The short version</h2>
-<p>We do not require you to create an account. We do not sell your data. We do not use your study material to train AI models. Study material you paste or import stays on your device unless you choose otherwise.</p>
+<div class="card">
+  <h3>The short version</h3>
+  <p style="margin-bottom:0;">No account required. We do not sell your data. We do not use your study material to train AI models. Your material stays on your device and only reaches our servers when you tap <strong>Generate</strong> — and it does so with your explicit action.</p>
+</div>
 
-<h2>1 · What we collect</h2>
+<h2>Contents</h2>
+<ol class="toc">
+  <li>Overview</li>
+  <li>What We Collect</li>
+  <li>How We Use Your Study Materials</li>
+  <li>AI Processing and Third-Party AI Providers</li>
+  <li>Subscription and Payment Information</li>
+  <li>Analytics and Crash Data</li>  <li>Data Storage and Retention</li>
+  <li>Data Deletion and Your Choices</li>
+  <li>AI-Generated Content Disclaimer</li>
+  <li>Children's Privacy</li>
+  <li>Data Security</li>
+  <li>Your Privacy Rights</li>
+  <li>Changes to This Policy</li>
+  <li>Contact</li>
+</ol>
 
+<h2>1 · Overview</h2>
+<p>StudyGate AI is an educational productivity tool. It analyzes the study material you give it — text you paste or a PDF you import — and generates a structured Study Guide: an overview, key concepts, important details, key terms, relationships between ideas, and potential exam questions. Pro adds self-testing features.</p>
+<p>The core loop is: <strong>you choose the material, you decide when to process it</strong>. We do not collect study material proactively, and we do not build a profile of what you are studying.</p>
+
+<h2>2 · What We Collect</h2>
 <table>
   <thead><tr><th>What</th><th>Why</th><th>Where it lives</th></tr></thead>
   <tbody>
     <tr>
       <td>Study material you paste or import (text, PDF contents)</td>
-      <td>Processed locally to build your guide. Sent to our server only when you tap Generate.</td>
-      <td class="mono">On device + our server, transiently</td>
+      <td>Processed to generate your Study Guide. Transmitted off-device only when you tap Generate.</td>
+      <td class="mono">On device, plus our servers transiently</td>
     </tr>
     <tr>
-      <td>Generated study guides, quiz items, and your progress state</td>
-      <td>Core functionality — this is the product.</td>
+      <td>Generated guides, quiz items, and your progress state</td>
+      <td>Core functionality. This is the product.</td>
       <td class="mono">On device</td>
     </tr>
     <tr>
-      <td>Anonymous install identifier</td>
-      <td>Enforcing the free-tier limit (5 guides) and preventing abuse.</td>
-      <td class="mono">Our server</td>
+      <td>A random identifier we generate to count free-tier usage</td>
+      <td>Enforcing the free-tier limit and preventing abuse. It is a random value we create — not your device's advertising identifier, and not tied to you personally.</td>
+      <td class="mono">Our servers</td>
     </tr>
     <tr>
       <td>Subscription status and transaction receipts</td>
       <td>Confirming your Pro access.</td>
-      <td class="mono">Apple / our server</td>
+      <td class="mono">Apple, RevenueCat, our servers</td>
     </tr>
     <tr>
-      <td>Crash logs and diagnostic info</td>
-      <td>Finding and fixing bugs.</td>
-      <td class="mono">Our server</td>
+      <td>Study material, transmitted to Google for AI processing</td>
+      <td>Generating your Study Guide. Sent only when you tap Generate. See Section 4.</td>
+      <td class="mono">Google LLC, United States</td>
+    </tr>
+    <tr>
+      <td>Crash and diagnostic information</td>
+      <td>Apple may provide us with crash reports and diagnostic information so we can find and fix bugs. We do not use third-party crash-reporting or advertising SDKs.</td>
+      <td class="mono">Apple, our servers</td>
     </tr>
   </tbody>
 </table>
-
-<p><strong>We do not collect:</strong> your name, email, contacts, photos (beyond materials you explicitly import), precise location, or browsing history.</p>
-
-<h2>2 · How we use your material</h2>
-
+<p><strong>We do not collect</strong> your name, email address, contacts, photo library, precise location, or browsing history.</p>
 <div class="card">
-  <h3>Your material is yours</h3>
-  <p>We use it for one thing: generating your study guide. We do <strong>not</strong> use your material to train, fine-tune, or improve any AI model. We do not sell it. We do not share it with third parties for their own purposes.</p>
-  <p>Generated guides are deleted from our servers within a short retention window after generation.</p>
+  <h3>What we don't ask for</h3>
+  <p style="margin-bottom:0;">No IDFA. No advertising or marketing SDKs. No analytics SDK that profiles you across other apps. We are not asking for permission to track you, and the app does not use App Tracking Transparency.</p>
 </div>
 
-<h2>3 · Who we share it with</h2>
-<p>We share only what is necessary, with these categories of recipients:</p>
-<ul>
-  <li><strong>Apple</strong> — for App Store purchases, receipts, and subscription management. Apple does not give us your payment card details.</li>
-  <li><strong>Our AI infrastructure providers</strong> — subprocessors that run the language model on your behalf, under contract, with instructions not to retain your material. This is the only time study material leaves our control, and only to produce your guide.</li>
-  <li><strong>Analytics and crash reporting providers</strong> — in aggregated form, containing no study content.</li>
-  <li><strong>Professional advisors or authorities</strong> — where required by law.</li>
-</ul>
-<p>We are not a party to any arrangement between you and these providers beyond the processing described here.</p>
+<h2>3 · How We Use Your Study Materials</h2>
+<p>Material you paste or import is processed <strong>locally on your device</strong>. Reading it, previewing it, editing it, and checking length limits all happen on-device.</p>
+<p>Your material is transmitted to our servers only when you tap <strong>Generate Study Guide</strong>. At that moment we tell you it is happening, and the transmission is limited to producing your guide.</p>
+<p>We use your material to generate your Study Guide and for no other purpose. We do <strong>not</strong> use it to train, fine-tune, or evaluate any AI model. We do not sell it, and we do not share it for anyone else's purposes.</p>
 
-<h2>4 · Where your data goes</h2>
-<p>Study material and generated guides are stored <strong>on your device</strong>. Limited technical data (anonymized install ID, subscription status, crash logs) is processed on servers located in the United States.</p>
+<h2>4 · AI Processing and Third-Party AI Providers</h2>
+<p>Generating a Study Guide requires a large language model. StudyGate AI uses <strong>Google LLC</strong> as its AI processing provider, using Google's Gemini API.</p>
 
-<h2>5 · How long we keep things</h2>
+<p><strong>Your study material is transmitted to Google only to generate the study content you requested.</strong> We use Google's paid API tier, under which Google does not use your content to train or improve its own models. We do not permit our AI providers to use your material for model training.</p>
+
+<p>We configure our services to limit retention where the provider makes that option available, and your material is processed transiently to return your result rather than stored as a working copy.</p>
+
+<p>Google processes the content submitted through the Gemini API to provide the AI processing service described above. This processing is performed in the <strong>United States</strong>.</p>
+
+<p>We will notify you in the app before your material is sent for generation.</p>
+
+<h2>5 · Subscription and Payment Information</h2>
+<p>Purchases are processed by Apple. We never receive your payment card details.</p>
+<p>StudyGate AI uses <a href="https://www.revenuecat.com" rel="noopener" target="_blank">RevenueCat</a> to manage subscription entitlements — it verifies whether you have Pro access so we can unlock paid features. Subscription and purchase-related information may therefore be processed by Apple and RevenueCat.</p>
+<p>You can manage or cancel your subscription through your App Store account settings.</p>
+
+<h2>6 · Analytics and Crash Data</h2>
+<p>Apple may provide us with crash reports and diagnostic information so we can find and fix bugs. This is limited to technical information about app performance and does not include the content of your study material.</p>
+<p>We do not use third-party crash-reporting, advertising, or cross-app tracking analytics SDKs. We do not use App Tracking Transparency.</p>
+
+<h2>7 · Data Storage and Retention</h2>
 <div class="card">
-  <p><span class="tag t-opt">ON DEVICE</span> Study material and generated guides stay until you delete them. Clearing cached material in Settings removes the stored source text. Deleting the app removes everything.</p>
-  <p><span class="tag t-collect">SERVER</span> Transient processing data is discarded shortly after generation. Anonymized aggregate statistics and crash logs are retained for as long as needed to operate and improve the service.</p>
+  <p><span class="tag t-opt">ON DEVICE</span> Your study material and generated guides stay on your device. They are not deleted by us — they remain until you remove them, clear your cache, delete the session, or delete the app.</p>
+  <p><span class="tag t-caution">IN TRANSIT</span> Material sent for generation is processed transiently to produce your guide. We do not use it for model training and do not retain it as a working copy beyond what's needed to return your result.</p>
+  <p><span class="tag t-shared">SERVER</span> Anonymized aggregate statistics, free-tier counters, and crash reports provided by Apple are retained for as long as needed to operate and improve the service. <strong>We do not store your study material on our servers.</strong></p>
 </div>
+<p>Servers processing limited technical data are located in the United States. AI processing for your Study Guide is performed by Google LLC in the United States.</p>
 
-<h2>6 · Your controls</h2>
+<h2>8 · Data Deletion and Your Choices</h2>
 <ul>
-  <li><strong>Delete material</strong> — Settings → Clear cached material, or delete individual sessions from History.</li>
-  <li><strong>Delete everything</strong> — delete the app from your device.</li>
-  <li><strong>Manage your subscription</strong> — through your App Store account settings.</li>
-  <li><strong>Ask what's stored</strong> — email us and we'll tell you, and delete it if you want.</li>
+  <li><strong>Delete cached material</strong> — Settings → Clear cached material removes the stored source text from your device. Your generated guides are kept.</li>
+  <li><strong>Delete a session</strong> — History → long press a session to remove it and its guide.</li>
+  <li><strong>Delete everything</strong> — deleting the app removes all local data. For server-side data, email us and we will delete it.</li>
+  <li><strong>Ask what's stored</strong> — email us and we'll tell you, and delete it if you ask.</li>
 </ul>
+<p>Because we do not require an account, we have no account to delete. If you want the server-side identifier associated with your device removed, email us with the request.</p>
 
-<h2>7 · Children's privacy</h2>
-<p>StudyGate is not directed to children under 13 (or the minimum age of digital consent in your region). We do not knowingly collect personal information from children. If you believe a child has provided us material or personal data, contact us and we'll delete it.</p>
+<h2>9 · AI-Generated Content Disclaimer</h2>
+<div class="card warn">
+  <h3>Please read this</h3>
+  <p>StudyGate AI uses artificial intelligence to generate study guides, quizzes, flashcards, and other educational content.</p>
+  <p><strong>AI-generated content may contain inaccuracies, omissions, or errors.</strong></p>
+  <p>You should verify important information against your original study materials, textbooks, course materials, or instructor guidance.</p>
+  <p style="margin-bottom:0;">StudyGate AI is an educational productivity tool. It does not replace your teacher, instructor, textbook, course materials, or other authoritative educational resources.</p>
+</div>
+<p>We design StudyGate AI to avoid inventing facts that aren't in your material, and to flag material it considers uncertain. Those are mitigations, not guarantees.</p>
+<p>Do not rely on StudyGate AI as your sole source for medical, legal, financial, or safety-critical information.</p>
 
-<h2>8 · Your rights</h2>
-<p>Depending on where you live, you may have the right to access, correct, export, or delete your personal data, or to object to certain processing. To exercise any of these, email us. We respond within 30 days. You may also lodge a complaint with your local data protection authority.</p>
+<h2>10 · Children's Privacy</h2>
+<p>StudyGate AI is intended for students and adult learners — high school, college, university, self-directed learners, and exam preparation. It is <strong>not</strong> directed to children under 13, and we do not knowingly collect personal information from them.</p>
+<p>If you believe a child under 13 has provided us study material or personal data, contact us and we will delete it.</p>
 
-<h2>9 · Security</h2>
-<p>Data in transit is encrypted with TLS. Access to production systems is restricted to people who need it and protected by multi-factor authentication. No method of transmission or storage is completely secure, and we don't claim otherwise.</p>
+<h2>11 · Data Security</h2>
+<p>Data in transit is encrypted with TLS. Access to production systems is restricted to those who need it and protected by multi-factor authentication. No method of transmission or storage is completely secure, and we don't claim otherwise.</p>
 
-<h2>10 · Changes to this policy</h2>
-<p>If we make a material change, we'll update the "Last updated" date above and, where the change is significant, notify you in the app before it takes effect. Continuing to use StudyGate after a change means you accept the revised policy.</p>
+<h2>12 · Your Privacy Rights</h2>
+<p>Depending on where you live, you may have the right to access, correct, export, or delete your personal data, or to object to certain processing. Some regions (including the EEA, UK, and California) grant specific rights.</p>
+<p>To exercise any of these, email us. We respond within 30 days. You may also lodge a complaint with your local data protection authority.</p>
 
-<h2>11 · Contact</h2>
+<h2>13 · Changes to This Policy</h2>
+<p>If we make a material change, we will update the "Last updated" date above and, where the change is significant, notify you in the app before it takes effect. Continuing to use StudyGate AI after a change means you accept the revised policy.</p>
+
+<h2>14 · Contact</h2>
 <div class="card">
   <p><strong>Email</strong><br>
   <a href="mailto:yangshayne128@gmail.com">yangshayne128@gmail.com</a></p>
-  <p class="mono" style="margin-bottom:0;">StudyGate · Privacy Team</p>
+  <p style="margin-bottom:0;">Please include the subject line <span class="mono">Privacy Request</span> so we can route it quickly.</p>
 </div>
 
 <footer>
-  <p>This policy applies to the StudyGate mobile app. It does not cover third-party apps or services that we do not operate.</p>
+  <p>This policy applies to the StudyGate AI mobile app. It does not cover third-party apps or services that we do not operate.</p>
 </footer>
 
 </div>
